@@ -10,7 +10,8 @@ gem "rails", "~> 7.0.4", ">= 7.0.4.2"
 gem "sprockets-rails"
 
 # Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
+# already in development test statement 
+# gem "sqlite3", "~> 1.4"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -74,4 +75,12 @@ end
   # Use to upload images
   gem "kt-paperclip", "~> 6.4", ">= 6.4.1"
 
+  group :production do
+    gem 'pg'
+    gem 'rails_12factor'
+  end
+
+  group :development, :test do 
+    gem 'sqlite3'
+  end
 
