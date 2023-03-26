@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_14_072856) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_26_104712) do
   create_table "listings", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -21,6 +21,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_14_072856) do
     t.string "image_content_type"
     t.bigint "image_file_size"
     t.datetime "image_updated_at"
+    t.string "image"
   end
 
 end
