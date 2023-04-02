@@ -1,18 +1,18 @@
 <div class="p-5 mb-4 mt-4 rounded-3" id="jumbotron">
-      <div class="container-fluid py-5">
-        <h2 class="display-6 fw-bold">Etsydemo is the best way to find and sell products</h2>
-        <p class="col-md-9 fs-4">Explore the variety of products, buy and sell. Find out what interesting products your neighbours are selling.</p>
-        <a href="/listings/new" class="btn btn-primary btn-lg" type="button">Add listing</a>
-      </div>
-    </div>
+  <div class="container-fluid py-5">
+    <h2 class="display-6 fw-bold">Etsydemo is the best way to find and sell products</h2>
+    <p class="col-md-9 fs-4">Explore the variety of products, buy and sell. Find out what interesting products your neighbours are selling.</p>
+    <a href="/listings/new" class="btn btn-primary btn-lg" type="button">Add listing</a>
+  </div>
+</div>
 
 <h1>Listings</h1>
-<div class="center">
-<div class=“row”>
+<div class="container">
+<div class="row">
   <% @listings.each do |listing| %>
-    <div class=“col-md-3”>
+    <div class="col-md-3 ">
       <div class=“thumbnail”>
-        <%= link_to image_tag(listing.image.url), listing %>
+        <%= link_to image_tag(listing.image.url(:medium)), listing%>
           <div class=“caption”>
           <h3><%= listing.name %> </h3>
           <p><%= number_to_currency(listing.price) %> </p>
