@@ -10,6 +10,7 @@
       <li class="nav-item"> <%= link_to "Contact", pages_contact_path, class: "nav-link ms-auto" %> </li>
       <% if user_signed_in? %>
           <li class="nav-item"> <%= link_to "Edit profile", edit_user_registration_path, class: "nav-link me-auto" %> </li>
+          <li class="nav-item"> <%= link_to "Manage listings", seller_path, class: "nav-link me-auto" %> </li>
           <li class="nav-item"> <%= link_to("Log out", destroy_user_session_path, class: "nav-link me-auto", method: :delete, data: { turbo_method: :delete }) %></li>
         <%else%>
           <li class="nav-item"> <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %> </li>
