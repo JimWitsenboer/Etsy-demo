@@ -9,8 +9,23 @@
       <li class="nav-item"> <%= link_to "About", pages_about_path, class: "nav-link ms-auto" %> </li>
       <li class="nav-item"> <%= link_to "Contact", pages_contact_path, class: "nav-link ms-auto" %> </li>
       <% if user_signed_in? %>
-          <li class="nav-item"> <%= link_to "Edit profile", edit_user_registration_path, class: "nav-link me-auto" %> </li>
-          <li class="nav-item"> <%= link_to "Manage listings", seller_path, class: "nav-link me-auto" %> </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Seller account</a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-item"> <%= link_to "Manage listings", seller_path, class: "nav-link me-auto" %> </li>
+            <li class="dropdown-item"> <%= link_to "Sales history", sales_path, class: "nav-link me-auto" %> </li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <%= current_user.name %></a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-item"> <%= link_to "Manage listings", seller_path, class: "nav-link me-auto" %> </li>
+            <li class="dropdown-item"> <%= link_to "Purchase history", purchases_path, class: "nav-link me-auto" %> </li>
+            <li class="dropdown-item"> <%= link_to "Edit profile", edit_user_registration_path, class: "nav-link me-auto" %> </li>
+          </ul>
+        </li>
           <li class="nav-item"> <%= link_to("Log out", destroy_user_session_path, class: "nav-link me-auto", method: :delete, data: { turbo_method: :delete }) %></li>
         <%else%>
           <li class="nav-item"> <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %> </li>
