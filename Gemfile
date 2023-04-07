@@ -13,6 +13,7 @@ gem "fog-aws"
 gem "figaro"
 gem "mini_magick"
 gem 'carrierwave', '>= 3.0.0.beta', '< 4.0'
+gem 'stripe'
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 gem 'devise'
